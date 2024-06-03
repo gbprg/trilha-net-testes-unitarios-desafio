@@ -1,33 +1,33 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TestesUnitarios.Desafio.Console.Services
 {
     public class ValidacoesLista
     {
-        public List<int> RemoverNumerosNegativos(List<int> lista)
+        public List<int> RemoverNumerosNegativos(List<int> numeros)
         {
-            var listaSemNegativos = lista.Where(x => x > 0);
-            return listaSemNegativos.ToList();
+            return numeros.Where(n => n >= 0).ToList();
         }
 
-        public bool ListaContemDeterminadoNumero(List<int> lista, int numero)
+        public bool ListaContemDeterminadoNumero(List<int> numeros, int numero)
         {
-            var contem = lista.Contains(numero);
-            return contem;
+            return numeros.Contains(numero);
         }
 
-        public List<int> MultiplicarNumerosLista(List<int> lista, int numero)
+        public List<int> MultiplicarNumerosLista(List<int> numeros, int multiplicador)
         {
-            var listaMultiplicada = lista.Select(x => x * numero).ToList();
-            return listaMultiplicada;
+            return numeros.Select(n => n * multiplicador).ToList();
         }
 
-        public int RetornarMaiorNumeroLista(List<int> lista)
+        public int RetornarMaiorNumeroLista(List<int> numeros)
         {
-            return lista.Max();
+            return numeros.Max();
         }
 
-        public int RetornarMenorNumeroLista(List<int> lista)
+        public int RetornarMenorNumeroLista(List<int> numeros)
         {
-            return lista.Min();
+            return numeros.Min();
         }
     }
 }
